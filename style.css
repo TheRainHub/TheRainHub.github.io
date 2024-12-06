@@ -5,6 +5,8 @@ body {
     line-height: 1.6;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
                 url('image/back.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    background-size: 190%;
     color: #f4f4f4;
     overflow-x: hidden;
 }
@@ -47,6 +49,7 @@ section {
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
 }
 
 section:hover {
@@ -59,6 +62,30 @@ section h2 {
     color: #f39c12;
     text-transform: uppercase;
 }
+
+section#inspirace {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+section#inspirace h2 {
+    color: #f39c12;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+section#inspirace p {
+    text-align: justify;
+    line-height: 1.8;
+    color: #f4f4f4;
+    font-size: 1.1rem;
+}
+
 
 .video-container iframe {
     width: 100%;
@@ -74,16 +101,18 @@ section h2 {
     box-shadow: 0 8px 20px rgba(243, 156, 18, 0.7);
 }
 
+
 .gallery {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; /* Устанавливает вертикальное направление */
+    gap: 20px; /* Расстояние между изображениями */
+    align-items: center; /* Центрирует изображения по горизонтали */
+    padding: 10px;
 }
 
 .gallery img {
-    width: 30%;
-    max-width: 220px;
+    width: 300px; /* Настраивает фиксированную ширину изображений */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
     border: 2px solid #f39c12;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -91,7 +120,7 @@ section h2 {
 }
 
 .gallery img:hover {
-    transform: translateY(-10px);
+    transform: scale(3.50);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
     filter: brightness(1.2);
 }
@@ -106,6 +135,12 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: background 0.3s, transform 0.2s;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding-left: 0; 
+    margin: 0; 
 }
 
 button:hover {
